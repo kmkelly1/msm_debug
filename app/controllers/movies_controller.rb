@@ -56,5 +56,9 @@ class MoviesController < ApplicationController
     movie = Movie.find(params[:id])
 
     movie.destroy
+    
+    @movies = Movie.all
+    
+    render("/movies/index.html.erb")
   end
 end
