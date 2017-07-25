@@ -34,6 +34,8 @@ class MoviesController < ApplicationController
   def edit_form
     # Update form for a movie
     @movie = Movie.find(params[:id])
+    
+    render("movies/edit_form.html.erb")
   end
 
   def update_row
@@ -48,7 +50,7 @@ class MoviesController < ApplicationController
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
 
-    render("show")
+    render("/movies/show.html.erb")
   end
 
   def destroy
